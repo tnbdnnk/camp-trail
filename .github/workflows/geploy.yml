@@ -30,6 +30,6 @@ jobs:
                 git config --global user.email "tnbdnnk@gmail.com"
 
             - name: Deploy to GitHub Pages 
-              run: npm run deploy:frontend
+              run: npx gh-pages -d client/dist
               env:
                 GITHUB_TOKE: ${{ secrets.GITHUB_TOKEN }}

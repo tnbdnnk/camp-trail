@@ -1,0 +1,35 @@
+name: Deploy to Github Pages
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build-and-deploy:
+        runs-on: ubundu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: '16'
+
+            - name: Install dependencies 
+              run: npm run install:all
+
+            - name: Build frontend
+              run: npm run build
+
+            - name: Configure Git User
+              run: |
+                git config --global user.name "Tetiana Bidnenko"
+                git config --global user.email "tnbdnnk@gmail.com"
+
+            - name: Deploy to GitHub Pages 
+              run: npm run deploy:frontend
+              env:
+                GITHUB_TOKE: ${{ secrets.GITHUB_TOKEN }}

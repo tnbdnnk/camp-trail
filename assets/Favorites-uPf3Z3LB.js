@@ -1,0 +1,1 @@
+import{a as e,j as r}from"./index-BAgsuuEA.js";import{A as a}from"./AdvertCard-BYRPEzaS.js";const c=()=>{const t=e(s=>s.Favorites),i=e(s=>s.adverts.filter(o=>t.includes(o._id)));return r.jsxs("div",{children:[r.jsx("h1",{children:"Favorites"}),r.jsx("div",{children:i.map(s=>r.jsx(a,{advert:s},s._id))})]})};export{c as default};

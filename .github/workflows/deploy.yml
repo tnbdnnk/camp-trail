@@ -40,24 +40,35 @@ name: Build and deploy to GitHub Pages
 on:
   push:
     branches: [master]
+
 env:
-  VITE_API_TEST: ${{secrets.VITE_API_TEST}}
+  VITE_API_TEST: ${{ secrets.VITE_API_TEST }}
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Install, build 🔧
-        run: |
-          npm install
-          npm run build
-          cp /client/dist/index.html /client/dist/404.html
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies 🔧
+        run: npm install
+
+      - name: Build frontend 🔨
+        run: npm run build --prefix client
+
+      - name: Copy index to 404
+        run: cp client/dist/index.html client/dist/404.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
           folder: client/dist
+          token: ${{ secrets.GITHUB_TOKEN }}

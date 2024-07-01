@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAds } from "../redux/actions";
 import AdvertCard from "../components/AdvertCard";
@@ -6,11 +6,11 @@ import AdvertCard from "../components/AdvertCard";
 const Catalog = () => {
     const dispatch = useDispatch();
     const adverts = useSelector((state) => state.adverts);
-    const [page, setPage] = useState(1);
+    // const [page, setPage] = useState(1);
 
     useEffect(() => {
-        dispatch(fetchAds(page));
-    }, [dispatch, page]);
+        dispatch(fetchAds());
+    }, [dispatch]);
 
     return (
         <div>
@@ -20,7 +20,7 @@ const Catalog = () => {
                     <AdvertCard key={advert._id} advert={advert}/>
                 ))}
             </div>
-            <button onClick={() => setPage(page + 1)}>Load More</button>
+            {/* <button onClick={() => setPage(page + 1)}>Load More</button> */}
         </div>
     )
 }

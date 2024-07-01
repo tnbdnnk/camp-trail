@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://camp-trail.onrender.com/api",
 });
 
-export const fetchAds = (page) => api.get(`/adverts?page=${page}`);
+export const fetchAds = () => api.get(`/adverts`);
 
 export const addFavorite = (id) => api.post(`/favorites`, { id });
 

@@ -1,1 +1,0 @@
-import{u as r,a as o,r as c,f as d,j as t}from"./index-BykW7Q8U.js";import{A as n}from"./AdvertCard-CAFNjhyK.js";const p=()=>{const e=r(),a=o(s=>s.adverts);return c.useEffect(()=>{e(d())},[e]),console.log("Catalog component rendered"),t.jsxs("div",{children:[t.jsx("h1",{children:"Catalog"}),t.jsx("div",{children:a.map(s=>t.jsx(n,{advert:s},s._id))})]})};export{p as default};

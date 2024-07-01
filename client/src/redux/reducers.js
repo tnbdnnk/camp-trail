@@ -26,7 +26,7 @@ const favoritesReducer = (state = [], action) => {
 };
 
 const rootReducer = combineReducers({
-    ads: adsReduser,
+    adverts: adsReduser,
     favorites: favoritesReducer
 });
 

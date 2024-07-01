@@ -1,6 +1,7 @@
 {
   "name": "camp-trail",
   "version": "1.0.0",
+  "homepage": "https://tnbdnnk.github.io/camp-trail/",
   "description": "",
   "type": "module",
   "main": "index.js",

@@ -9,7 +9,7 @@ import {
   store,
   // persistor
 } from './redux/store.js';
-// import './index.css';
+import './index.css';
 
 const rootElement = document.getElementById("root");
 

@@ -12,6 +12,8 @@ const Catalog = () => {
         dispatch(fetchAds());
     }, [dispatch]);
 
+    console.log("Catalog component rendered");
+
     return (
         <div>
             <h1>Catalog</h1>

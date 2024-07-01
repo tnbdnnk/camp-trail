@@ -1,0 +1,1 @@
+import{u as e,a as o,r as c,f as d,j as t}from"./index-OPJnH7TY.js";import{A as i}from"./AdvertCard-CoEanrTK.js";const x=()=>{const a=e(),r=o(s=>s.adverts);return c.useEffect(()=>{a(d())},[a]),t.jsxs("div",{children:[t.jsx("h1",{children:"Catalog"}),t.jsx("div",{children:r.map(s=>t.jsx(i,{advert:s},s._id))})]})};export{x as default};

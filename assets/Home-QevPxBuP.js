@@ -1,1 +1,0 @@
-import{j as e}from"./index-pR8ejn0r.js";const o=()=>e.jsxs("div",{children:[e.jsx("h1",{children:"Welcome to our Camp Trail Service"}),e.jsx("p",{children:"We offer the best camper vans for your travel needs in Ukraine."})]});export{o as default};

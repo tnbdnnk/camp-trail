@@ -1,1 +1,0 @@
-import{j as e,N as r}from"./index-_oqScGCN.js";const o=()=>e.jsxs("div",{children:[e.jsx("h1",{children:"Welcome to our Camp Trail Service"}),e.jsx("p",{children:"We offer the best camper vans for your travel needs in Ukraine."}),e.jsx("div",{children:e.jsx(r,{to:"/catalog",children:"Catalog"})})]});export{o as default};

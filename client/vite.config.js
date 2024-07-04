@@ -1,8 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), svgr()],
   esbuild: {
     loader: "jsx",
     include: /src\/.*\.jsx?$/,
@@ -14,5 +15,5 @@ export default defineConfig({
       pages: "./src/pages",
     },
   },
-  base: "/camp-trail",
+  base: "/camp-trail/",
 });

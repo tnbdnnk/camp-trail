@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addFavorite, removeFavorite } from '../../redux/actions.js';
-import AdvertCardCategories from './AdvertCardCategories/AdvertCardCategories.jsx';
-// import { ReactComponent as IconHeart } from '../../icons/heart.svg';
-// import IconHeart from '../../icons/heart.svg';
+import { renderItem, renderItemQuantity, renderItemValue } from '../../hooks/renderItems.jsx';
+
 import icons from '../../icons/symbol-defs.svg';
 
 import css from './AdvertCard.module.css';
@@ -20,16 +19,6 @@ const AdvertCard = ({ advert }) => {
             dispatch(addFavorite(advert._id));
         }
     };
-
-    // const formatPrice = (price) => {
-    //     return new Intl.NumberFormat(
-    //         'de-DE',
-    //         {
-    //             style: 'currency',
-    //             currency: 'EUR'
-    //         }
-    //     ).format(price);
-    // };
 
     const formatPrice = (price) => {
         return `€${price.toFixed(2)}`;
@@ -55,11 +44,6 @@ const AdvertCard = ({ advert }) => {
                             onClick={handleFavorite}
                             className={css.favoriteButton}
                         >
-                            {/* <IconHeart className={isFavorite ? css.favorite : css.notFavorite} /> */}
-                            {/* <img
-                                src={IconHeart} alt="heart icon"
-                                className={isFavorite ? css.favorite : css.notFavorite}
-                            /> */}
                             <svg
                                 width="20"
                                 height="20"
@@ -85,7 +69,16 @@ const AdvertCard = ({ advert }) => {
 
                 <p>{truncateText(advert.description, 60)}</p>
 
-                <AdvertCardCategories advert={advert}/>
+                <section className={css.categories}>
+                    <ul className={css.categoriesList}>
+                        {renderItemQuantity(advert, 'adults', 'icon-adults', 'Adults')}
+                        {renderItemValue(advert, 'transmission', 'icon-transmission')}
+                        {renderItemValue(advert, 'engine', 'icon-fuel')}
+                        {renderItem(advert, 'kitchen', 'icon-spoon-knife', 'Kitchen')}
+                        {renderItemQuantity(advert, 'beds', 'icon-bed', 'Beds')}
+                        {renderItem(advert, 'airConditioner', 'icon-ac', 'AC', 'AC')}
+                    </ul>
+                </section>
 
                 <button>Show More</button>
             </div>
@@ -103,6 +96,14 @@ AdvertCard.propTypes = {
         reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
         location: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
+        adults: PropTypes.number.isRequired,
+        transmission: PropTypes.string.isRequired,
+        engine: PropTypes.string.isRequired,
+        details: PropTypes.shape({
+            kitchen: PropTypes.number.isRequired,
+            beds: PropTypes.number.isRequired,
+            airConditioner: PropTypes.number.isRequired,
+        }).isRequired,
     }).isRequired,
 };
 

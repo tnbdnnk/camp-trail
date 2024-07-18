@@ -1,0 +1,1 @@
+import{a as t,j as r}from"./index-BHF9FPV_.js";import{A as a}from"./AdvertCard-UVsoPGrG.js";import"./hooks-6DWzh85W.js";const v=()=>{const e=t(s=>s.Favorites),i=t(s=>s.adverts.filter(o=>e.includes(o._id)));return r.jsxs("div",{children:[r.jsx("h1",{children:"Favorites"}),r.jsx("div",{children:i.map(s=>r.jsx(a,{advert:s},s._id))})]})};export{v as default};

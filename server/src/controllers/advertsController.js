@@ -1,9 +1,16 @@
 import Advert from "../models/Advert.js";
 
 export const getAdverts = async (req, res) => {
+    const { location } = req.query;
+    let query = {};
+
+    if (location) {
+        query.location = new RegExp(`^${location}$, 'i`);
+    }
+
     try {
         console.log('fetching adverts from database...');
-        const adverts = await Advert.find();
+        const adverts = await Advert.find(query);
         console.log(`adverts fetched: ${adverts.length}`);
         res.status(200).json(adverts);
     } catch (error) {

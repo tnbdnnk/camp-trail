@@ -211,18 +211,18 @@ const Filter = ({ onFilter, resetFilter, filterCriteria }) => {
                             <input
                                 type="radio"
                                 name="type"
-                                value="alcove"
-                                checked={type === 'alcove'}
+                                value="panelTruck"
+                                checked={type === 'panelTruck'}
                                 onChange={handleTypeChange}
                             />
                             <svg className={css.radioIcon}>
                                 <use
-                                    href={icons + '#icon-alcove'}
+                                    href={icons + '#icon-van'}
                                     width='42'
                                     height='42'
                                 ></use>
                             </svg>
-                            <span className={css.radioLabelText}>Alcove</span>
+                            <span className={css.radioLabelText}>Van</span>
                         </label>
                         <label className={css.radioButton}>
                             <input
@@ -245,18 +245,18 @@ const Filter = ({ onFilter, resetFilter, filterCriteria }) => {
                             <input
                                 type="radio"
                                 name="type"
-                                value="panelTruck"
-                                checked={type === 'panelTruck'}
+                                value="alcove"
+                                checked={type === 'alcove'}
                                 onChange={handleTypeChange}
                             />
                             <svg className={css.radioIcon}>
                                 <use
-                                    href={icons + '#icon-van'}
+                                    href={icons + '#icon-alcove'}
                                     width='42'
                                     height='42'
                                 ></use>
                             </svg>
-                            <span className={css.radioLabelText}>Van</span>
+                            <span className={css.radioLabelText}>Alcove</span>
                         </label>
                     </div>
                 </div>

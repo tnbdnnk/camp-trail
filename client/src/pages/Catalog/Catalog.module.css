@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px); /* Full height minus navbar height */    
+    flex-grow: 1;
+    overflow-y: scroll;    /* background-image: url('../../icons//download.jpg');
+    background-repeat: no-repeat; */
+}
+
+.title {
+    margin: 20px;
+    z-index: 1; /* Ensure it stays above other content */
+    position: sticky;
+    top: 0; /* Stick to the top of the container */
+    width: 100%; /* Full width */
+}
+
+.advertList {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    /* flex-grow: 1;
+    overflow-y: scroll; */
+}

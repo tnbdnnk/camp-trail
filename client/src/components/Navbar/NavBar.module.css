@@ -1,0 +1,11 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #fff;
+}

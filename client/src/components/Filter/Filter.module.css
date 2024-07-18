@@ -1,0 +1,309 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    /* gap: 10px; */
+
+    border-radius: 8px;
+    /* border: 1px solid #fff; */
+
+}
+
+.filter h2 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #acacac;
+
+    margin: 0 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* ----- LOCATION ---------------------------------------------------------- */
+
+.location {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px 20px 10px;
+}
+
+.locationLabel {
+    font-size: 14px;
+    font-weight: 400;
+    color: #acacac;
+    margin-bottom: 8px;
+}
+
+/* .locationInput {
+    padding: 10px;
+    min-width: 320px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
+    border: 1px solid transparent;
+
+} */
+
+.location input {
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    background-color: #f0f0f0;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+/* input:focus {
+    border: 1px solid #000;
+    outline: none;
+} */
+
+.locationInput {
+    width: 100%;
+    color: #000;
+}
+
+.locationInput:hover,
+.locationInput:focus {
+    border: 1px solid #000;
+    outline: none;
+}
+
+.horizontalLine {
+    border: none;
+    border-top: 1px solid #cacaca;
+    margin: 0 10px 14px 10px;
+}
+
+/* ---- CHECKBOX ------------------------------------------------------------- */
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 6px;
+}
+
+.checkboxGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.checkboxButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 80px;
+    /* height: 60px; */
+    padding: 10px 12px;
+
+    /* border: 1px solid #f0f0f0;
+    background-color: #f0f0f0; */
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.checkboxButton input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkboxButton .checkboxIcon {
+    width: 24px;
+    height: 24px;
+    stroke: #000;
+    fill: none;
+    transition: all 0.7s;
+    margin-bottom: 6px;
+}
+
+.checkboxButton .checkboxLabelText {
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.checkboxButton:hover,
+.checkboxButton:active,
+.checkboxButton.checked {
+    border: 1px solid #f0f0f0;
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* .checkboxButton.checked {
+    border: 1px solid #000;
+    background-color: #f0f0f0;
+} */
+
+.checkboxButton:hover .checkboxIcon,
+.checkboxButton:active .checkboxIcon,
+.checkboxButton.checked .checkboxIcon {
+    stroke: #000;
+    color: #000;
+}
+
+.checkboxButton input:checked ~ .checkboxIcon {
+    stroke: #000;
+}
+
+.checkboxButton input:checked ~ .checkboxLabelText {
+    font-weight: 500;
+    color: #000;
+}
+
+/* ---- RADIO ------------------------------------------------------------------- */
+
+.radio {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 6px;
+}
+
+.radioGroup {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 12px; */
+    justify-content: space-between;
+}
+
+.radioButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    position: relative;
+
+    width: 80px;
+    /* height: 80px; */
+    padding: 10px 12px;
+
+    border: 1px solid #d9d9d9;
+    /* border: 1px solid #f0f0f0; */
+    /* background-color: #f0f0f0; */
+    border-radius: 8px;
+
+    transition: all 0.3s;
+}
+
+.radioButton input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.radioButton .radioIcon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 4px;
+    fill: #000;
+    transition: all 0.3s;
+}
+
+.radioButton .radioLabelText {
+    font-size: 14px;
+    text-align: center;
+    /* transition: all 0.3s; */
+}
+
+.radioButton:hover,
+.radioButton:active,
+.radioButton.checked {
+    border: 1px solid #f0f0f0;
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* .radioButton.checked {
+    border: 1px solid #000;
+    background-color: #f0f0f0;
+} */
+
+.radioButton:hover .radioIcon,
+.radioButton:active .radioIcon,
+.radioButton.checked .radioIcon {
+    fill:#000;
+    color: #000;
+}
+
+.radioButton input:checked ~ .radioIcon {
+    fill: #000;
+}
+
+.radioButton input:checked ~ .radioLabelText {
+    font-weight: 500;
+    color: #000;
+}
+
+
+/* ---- SEARCH BUTTONS -------------------------------------------------------- */
+
+.buttonContainer {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.searchButton {
+    background-color: transparent;
+    color: #000;
+    border-radius: 12px;
+    border: 1px solid #000;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    width: 140px;
+    transition: all 0.3s;
+}
+
+.searchButton:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.resetSearchButton {
+    background: none;
+    color: #acacac;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0 8px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: inherit;
+    cursor: pointer;
+    /* width: 120px; */
+    transition: all 0.2s;
+}
+
+.resetSearchButton:hover {
+    color: #000;
+    font-weight: 500;
+}

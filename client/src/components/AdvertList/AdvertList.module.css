@@ -1,0 +1,44 @@
+.advertListContainer {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    margin: 20px;
+    gap: 24px;
+}
+
+.filterContainer {
+    max-width: 360px;
+}
+
+.advertsList {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+    /* gap: 20px; */
+    
+}
+
+/* .advertsList::-webkit-scrollbar {
+    width: 8px;
+} */
+
+.loadMoreButton {
+    background-color: #000;
+    color: #fff;
+    border-radius: 14px;
+    border: 1px solid #000;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    width: 180px;
+    transition: all 0.3s;
+}
+
+.loadMoreButton:hover {
+    background-color: #fff;
+    color: #000;
+}

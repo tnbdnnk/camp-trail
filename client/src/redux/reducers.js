@@ -8,7 +8,7 @@ import {
 const adsReduser = (state = [], action) => {
     switch (action.type) {
         case FETCH_ADS_SUCCESS:
-            return [...state, ...action.payload];
+            return action.payload;
         default:
             return state;
     }

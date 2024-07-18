@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addFavorite, removeFavorite } from '../../redux/actions.js';
 import { renderItem, renderItemQuantity, renderItemValue } from '../../hooks/renderItems.jsx';
-
+import { formatPrice, truncateText } from '../../hooks/hooks.js';
 import icons from '../../icons/symbol-defs.svg';
 
 import css from './AdvertCard.module.css';
@@ -20,39 +20,31 @@ const AdvertCard = ({ advert }) => {
         }
     };
 
-    const formatPrice = (price) => {
-        return `€${price.toFixed(2)}`;
-    };
-
-    const truncateText = (text, maxLength) => {
-        if (text.length <= maxLength) {
-            return text;
-        }
-        return text.slice(0, maxLength) + '...';
-    }
-
     return (
         <div className={css.card}>
-            <img src={advert.gallery[0]} alt="camper van image" />
+            <section className={css.imageContaner}>
+                <img
+                    src={advert.gallery[0]}
+                    alt="camper van image"
+                    
+                />
+            </section>
 
             <div className={css.cardInfo}>
-                <section>
-                    <h3>{advert.name}</h3>
+                <section  className={css.sectionNameAndPrice}>
+                    <h2>{advert.name}</h2>
                     <div className={css.price}>
                         <p>{formatPrice(advert.price)}</p>
                         <button
                             onClick={handleFavorite}
                             className={css.favoriteButton}
                         >
-                            <svg
-                                width="20"
-                                height="20"
-                            >
+                            <svg className={css.favoriteIcon}>
                                 <use
                                     className={isFavorite ? css.favorite : css.notFavorite}
                                     href={icons + '#icon-heart'}
-                                    width="20"
-                                    height="20"
+                                    width="26"
+                                    height="26"
                                 ></use>
                             </svg>
                         </button>
@@ -60,14 +52,41 @@ const AdvertCard = ({ advert }) => {
                     
                 </section>
 
-                <section>
-                    <p>
+                <div className={css.cardInfo2}>
+                <section className={css.sectionRatingAdnLocation}>
+                    <p className={css.rating}>
+                        <svg
+                            width='16'
+                            height='16'
+                        >
+                            <use
+                                href={icons + '#icon-star'}
+                                width='16'
+                                height='16'
+                            ></use>
+                        </svg>
                         {advert.rating}({advert.reviews.length} rewievs)
                     </p>
-                    <p>{advert.location}</p>
+                    <p className={css.location}>
+                        <svg
+                            width='16'
+                            height='16'
+                        >
+                            <use
+                                href={icons + '#icon-map-pin'}
+                                width='16'
+                                height='16'
+                                fill='none'
+                                stroke='#000'
+                            ></use>
+                        </svg>
+                        {advert.location}
+                    </p>
                 </section>
 
-                <p>{truncateText(advert.description, 60)}</p>
+                <section className={css.sectionDescription}>
+                    <p className={css.description}>{truncateText(advert.description, 72)}</p>
+                </section>
 
                 <section className={css.categories}>
                     <ul className={css.categoriesList}>
@@ -78,9 +97,13 @@ const AdvertCard = ({ advert }) => {
                         {renderItemQuantity(advert, 'beds', 'icon-bed', 'Beds')}
                         {renderItem(advert, 'airConditioner', 'icon-ac', 'AC', 'AC')}
                     </ul>
-                </section>
+                    </section>
+                    </div>
 
-                <button>Show More</button>
+                    
+                <section className={css.showMore}>
+                    <button className={css.showMoreButton}>Show More</button>
+                </section>
             </div>
         </div>
     );

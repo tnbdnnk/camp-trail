@@ -9,13 +9,13 @@ const api = axios.create({
   baseURL: "https://camp-trail.onrender.com/api",
 });
 
-export const fetchAds = () => async (dispatch) => {
+export const fetchAds = (location = '') => async (dispatch) => {
   try {
-    const response = await api.get(`/adverts`);
+    const response = await api.get(`/adverts?location=${location}`);
     dispatch({ type: FETCH_ADS_SUCCESS, payload: response.data });
   } catch (error) {
     console.error("Error fetching ads:", error);
-    // Handle error gracefully, e.g., show a user-friendly message
+    dispatch({ type: 'FETCH_ADS_FAILURE', payload: error.message });
   }
 };
 

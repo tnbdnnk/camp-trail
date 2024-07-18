@@ -5,7 +5,7 @@ export const getAdverts = async (req, res) => {
     let query = {};
 
     if (location) {
-        query.location = new RegExp(`^${location}$, 'i`);
+        query.location = new RegExp(`^${location}$`, 'i');
     }
 
     try {

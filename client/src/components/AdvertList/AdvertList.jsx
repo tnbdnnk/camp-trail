@@ -18,25 +18,28 @@ const AdvertList = () => {
     const [visibleAds, setVisibleAds] = useState(4);
 
     useEffect(() => {
-        if (adverts.length === 0) {
-            dispatch(fetchAds([]));
-        } else {
-            setFilteredAdverts(adverts);
-        }
-    }, [dispatch, adverts]);
+        dispatch(fetchAds());
+    }, [dispatch]);
+
+    useEffect(() => {
+        setFilteredAdverts(adverts);
+    }, [adverts]);
 
     const handleFilter = (criteria) => {
         setFilterCriteria(criteria);
         const { location, equipment, type } = criteria;
         const filtered = adverts.filter((advert) => {
-            const matchesLocation = location ? advert.location.includes(location) : true;
+            const matchesLocation = location ? advert.location.toLowerCase().includes(location.toLowerCase()) : true;
+            
             const matchesEquipment = Object.keys(equipment).every((key) => {
                 if (key === 'shower' && equipment[key]) {
                     return advert.details.shower === 1 && advert.details.toilet === 1;
                 }
                 return equipment[key] ? advert.details[key] === 1 : true;
             });
+            
             const matchesType = type ? advert.form === type : true;
+            
             return matchesLocation && matchesEquipment && matchesType;
         });
 

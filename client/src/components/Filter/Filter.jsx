@@ -119,7 +119,7 @@ const Filter = ({ onFilter, resetFilter, filterCriteria }) => {
                             />
                             <svg  className={css.checkboxIcon}>
                                 <use
-                                    href={icons + '#icon-spoon-knife'}
+                                    href={icons + '#icon-kitchen'}
                                     width='24'
                                     height='24'
                                 ></use>
@@ -137,7 +137,7 @@ const Filter = ({ onFilter, resetFilter, filterCriteria }) => {
                             />
                             <svg  className={css.checkboxIcon}>
                                 <use
-                                    href={icons + '#icon-ac'}
+                                    href={icons + '#icon-wind'}
                                     width='24'
                                     height='24'
                                 ></use>

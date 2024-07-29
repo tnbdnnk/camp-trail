@@ -15,3 +15,8 @@ export const truncateText = (text, maxLength) => {
     }
     return text.slice(0, maxLength) + '...';
 };
+
+export const handleLocationClick = (location) => {
+    const query = encodeURIComponent(location);
+    window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank');
+}

@@ -1,0 +1,256 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.modalContent {
+    background: #fff;
+    margin: 18px 0;
+    padding: 20px 32px;
+    border-radius: 12px;
+    /* width: 90%; */
+    max-width: 860px;
+    /* height: 90%; */
+    display: flex;
+    flex-direction: column;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.name {
+    margin: 0;
+
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    stroke: #cacaca;
+    transition: all 0.3s;
+}
+
+.closeButton svg {
+    width: 18px;
+    height: 18px;
+    transition: all 0.3s;
+}
+
+.closeButton:hover svg {
+    stroke: #000;
+    scale: 1.1;
+}
+
+/* .modalBody {
+
+} */
+
+.ratingAndLocation {
+    display: flex;
+    justify-content: start;
+    gap: 28px;
+    margin-bottom: 12px;
+}
+
+.rating svg,
+.location svg {
+    margin-right: 6px;
+}
+
+.rating,
+.location {
+    transition: all 0.3s;
+}
+
+.rating:hover,
+.location:hover {
+    scale: 1.05;
+}
+
+.ratingLink,
+.locationLink {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.carouselContainer {
+    width: 100%;
+    /* height: 300px; */
+    max-height: 100%;
+    margin: 0 auto;
+    margin: 20px 0;
+
+    border-radius: 12px;
+}
+
+.carousel .slide {
+    background: none;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .imagesContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.imageWrapper {
+    width: 32%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.description {
+    margin-bottom: 36px;
+}
+
+.sections {
+    display: flex;
+    justify-content: start;
+    gap: 32px;
+}
+
+.sectionsButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 0 16px 0;
+    font-size: 20px;
+    color: #000;
+}
+
+.active {
+    /* font-weight: 500; */
+    border-bottom: 2px solid #000;
+}
+
+.sectionContent {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 420px;
+    border: none;
+}
+
+.sectionContent.active {
+    opacity: 1;
+}
+
+.detailsTitle {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 16px 0;
+}
+
+.horizontalLine {
+    border: none;
+    border-top: 1px solid #cacaca;
+    margin: 0 0 32px 0;
+}
+
+.horizontalLine2 {
+    border: none;
+    border-top: 1px solid #cacaca;
+    margin: 0 0 24px 0;
+}
+
+.sectionsAndBooking {
+    display: flex;
+    justify-content: space-between;
+}
+
+.featuresList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 36px 0;
+    padding: 0;
+}
+
+.featuresList li {
+    display: flex;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    background-color: #f1f1f1;
+    color: #000;
+    align-items: center;
+    justify-content: center;
+}
+
+.featuresList svg {
+    fill: none;
+    stroke: #000;
+}
+
+.detailsList {
+    margin: 0;
+    padding: 0;
+}
+
+.detailsList li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.reviewAvatar {
+    width: 62px;
+    height: 64px;
+    background-color: #cacaca;
+    border-radius: 50%;
+}

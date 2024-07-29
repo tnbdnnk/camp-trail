@@ -5,6 +5,8 @@
     flex-grow: 1;
     overflow-y: scroll;    /* background-image: url('../../icons//download.jpg');
     background-repeat: no-repeat; */
+    min-width: 1024px;
+    margin: 0 auto;
 }
 
 .title {
@@ -18,7 +20,7 @@
 .advertList {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    /* justify-content: center; */
     /* flex-grow: 1;
     overflow-y: scroll; */
 }

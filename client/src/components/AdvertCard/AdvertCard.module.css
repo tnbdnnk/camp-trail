@@ -61,7 +61,7 @@ section {
     margin-bottom: 16px;
 } */
 
-.cardInfo h2 {
+.advertName {
     font-size: 26px;
     font-weight: 300;
     margin: 0;
@@ -92,20 +92,39 @@ p {
     justify-content: center;
     padding: 0;
     width: 32px;
+    transition: all 0.3s;
 }
 
 .favoriteButton svg {
     width: 26px;
     height: 26px;
+    transition: fill 0.3s, stroke 0.3s;
 }
+
 .favorite {
     fill: #891919;
     stroke: #891919;
+    transition: all 0.3s;
+
 }
 
 .notFavorite {
     fill: none;
     stroke: #000; 
+    transition: all 0.3s;
+
+}
+
+/* .favoriteButton:hover .favorite {
+    fill: none;
+    stroke: #000; 
+        transition: all 0.3s;
+
+} */
+
+.favoriteButton:hover .notFavorite {
+    fill: #891919;
+    stroke: #891919;
 }
 
 /* ---- RATING AND LOCATION --------------------------------------------- */
@@ -121,6 +140,7 @@ p {
 .location svg {
     margin-right: 6px;
 }
+
 
 /* ---- DESCRIPTION -------------------------------------------------- */
 
@@ -152,9 +172,9 @@ p {
     justify-content: center;
 }
 
-.categories svg {
-    fill: #000;
-}
+/* .categories svg {
+    stroke: #000;
+} */
 
 /* ---- SHOW MORE BUTTON -------------------------------------------- */
 

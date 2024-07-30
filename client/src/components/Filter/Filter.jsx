@@ -13,6 +13,15 @@ const Filter = ({ onFilter, resetFilter, filterCriteria }) => {
         setLocation(filterCriteria.location);
         setEquipment(filterCriteria.equipment);
         setType(filterCriteria.type);
+
+        const radios = document.querySelectorAll(`.${css.radioButton}`);
+        radios.forEach(radio => {
+            if (radio.querySelector('input').value === filterCriteria.type) {
+                radio.classList.add(css.checked);
+            } else {
+                radio.classList.remove(css.checked);
+            }
+        });
     }, [filterCriteria]);
 
     const handleSubmit = (e) => {
@@ -87,7 +96,6 @@ const Filter = ({ onFilter, resetFilter, filterCriteria }) => {
 
     return (
         <section className={css.filter}>
-            {/* <h2>Filter</h2> */}
             <form
                 onSubmit={handleSubmit}
                 className={css.form}
@@ -290,7 +298,11 @@ const Filter = ({ onFilter, resetFilter, filterCriteria }) => {
 Filter.propTypes = {
     onFilter: PropTypes.func.isRequired,
     resetFilter: PropTypes.func.isRequired,
-    filterCriteria: PropTypes.object.isRequired
+    filterCriteria: PropTypes.shape({
+        location: PropTypes.string,
+        equipment: PropTypes.object,
+        type: PropTypes.string,
+    }).isRequired,
 };
 
 export default Filter;

@@ -3,18 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchAds } from "../../redux/actions";
 import AdvertCard from "../AdvertCard/AdvertCard";
 import Filter from "../Filter/Filter";
+import PropTypes from 'prop-types';
 
 import css from './AdvertList.module.css';
 
-const AdvertList = () => {
+const AdvertList = ({ initialFilterCriteria }) => {
     const dispatch = useDispatch();
     const adverts = useSelector((state) => state.adverts);
-    const [filteredAdverts, setFilteredAdverts] = useState(adverts);
-    const [filterCriteria, setFilterCriteria] = useState({
-        location: '',
-        equipment: {},
-        type: ''
-    });
+    const [filteredAdverts, setFilteredAdverts] = useState([]);
+    const [filterCriteria, setFilterCriteria] = useState(initialFilterCriteria);
     const [visibleAds, setVisibleAds] = useState(4);
 
     useEffect(() => {
@@ -24,6 +21,12 @@ const AdvertList = () => {
     useEffect(() => {
         setFilteredAdverts(adverts);
     }, [adverts]);
+
+    useEffect(() => {
+        if (initialFilterCriteria.type) {
+            handleFilter(initialFilterCriteria);
+        }
+    }, [initialFilterCriteria]);
 
     const handleFilter = (criteria) => {
         setFilterCriteria(criteria);
@@ -86,5 +89,9 @@ const AdvertList = () => {
         </div>
     )
 }
+
+AdvertList.propTypes = {
+    initialFilterCriteria: PropTypes.object.isRequired,
+};
 
 export default AdvertList;

@@ -1,41 +1,33 @@
-import PropTypes from 'prop-types';
-import {
-    // formatPrice,
-    truncateText
-} from '../../hooks/hooks';
-
+import { NavLink } from 'react-router-dom';
+import icons from '../../icons/symbol-defs.svg';
 import css from './HomeAdvertCard.module.css';
 
-const HomeAdvertCard = ({ advert }) => {
+const HomeAdvertCard = () => {
     return (
-        <div className={css.card}>
-            <img
-                src={advert.gallery[0]}
-                alt={advert.name}
-                className={css.image}
-            />
-            <div className={css.details}>
-                <h2 className={css.name}>{advert.form}</h2>
-                <p>{truncateText(advert.description, 120)}</p>
-                <div className={css.footer}>
-                    {/* <span className={css.price}>{formatPrice(advert.price)}</span> */}
-                    <span className={css.rate}>{advert.rating}({advert.reviews.length} rewievs)</span>
-                </div>
-            </div>
+        <div className={css.cardsContainer}>
+            <NavLink to='/catalog?type=panelTruck' className={css.card}>
+                <svg width='89' height='89'>
+                    <use href={icons + '#icon-van'}></use>
+                </svg>
+                <h3>Panel Truck</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum totam nobis dolorem eaque provident, impedit quis culpa iure esse officia, at rem excepturi magnam modi soluta corrupti quo vitae? In!</p>
+            </NavLink>
+            <NavLink to='/catalog?type=fullyIntegrated' className={css.card}>
+                <svg width='89' height='89'>
+                    <use href={icons + '#icon-fully-integrated'}></use>
+                </svg>
+                <h3>Fully Integrated</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum totam nobis dolorem eaque provident, impedit quis culpa iure esse officia, at rem excepturi magnam modi soluta corrupti quo vitae? In!</p>
+            </NavLink>
+            <NavLink to='/catalog?type=alcove' className={css.card}>
+                <svg width='89' height='89'>
+                    <use href={icons + '#icon-alcove'}></use>
+                </svg>
+                <h3>Alcove</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum totam nobis dolorem eaque provident, impedit quis culpa iure esse officia, at rem excepturi magnam modi soluta corrupti quo vitae? In!</p>
+            </NavLink>
         </div>
     )
 };
-
-HomeAdvertCard.propTypes = {
-    advert: PropTypes.shape({
-        gallery: PropTypes.arrayOf(PropTypes.string).isRequired,
-        name: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        form: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-        rating: PropTypes.number.isRequired,
-        reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
-    }).isRequired,
-}
 
 export default HomeAdvertCard;
